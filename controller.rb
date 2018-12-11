@@ -13,7 +13,11 @@ get '/welcome' do
   erb(:welcome)
 end
 
-get '/check_win/:hand1/:hand2' do
+get '/result' do
+  erb(:result)
+end
+
+get 'check_win/:hand1/:hand2' do
   @winner = Game.check_win( params[:hand1], params[:hand2])
   erb(:result)
 end
